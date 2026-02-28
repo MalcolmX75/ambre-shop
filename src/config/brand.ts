@@ -12,7 +12,7 @@ export const brand = {
     offWhite: "#FFF9F7",
   },
 
-  whatsappNumber: "24100000000",
+  whatsappNumber: "241748034650",
   whatsappPrefillMessage: "Bonjour Ambre Shop",
   facebookUrl: "https://facebook.com/ambreshop",
 

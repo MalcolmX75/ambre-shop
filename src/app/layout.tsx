@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RegisterSW from "@/components/RegisterSW";
-import { InstallButton } from "@/components/Effects";
+import { InstallModal } from "@/components/Effects";
 import { brand } from "@/config/brand";
 
 const playfair = Playfair_Display({
@@ -49,7 +49,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <RegisterSW />
-        <InstallButton />
+        <InstallModal />
       </body>
     </html>
   );
