@@ -157,7 +157,7 @@ export function FadeInSection({
 export function InstallModal() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showModal, setShowModal] = useState(false);
-  const [showButton, setShowButton] = useState(false);
+  const [hideButton, setHideButton] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
@@ -198,17 +198,14 @@ export function InstallModal() {
       setDeferredPrompt(null);
     }
     setShowModal(false);
-    setShowButton(false);
   };
 
   const dismissModal = () => {
     setShowModal(false);
-    setShowButton(true); // show mini button after dismissing modal
   };
 
-  const dismissAll = () => {
-    setShowModal(false);
-    setShowButton(false);
+  const dismissButton = () => {
+    setHideButton(true);
   };
 
   if (isStandalone) return null;
@@ -337,8 +334,8 @@ export function InstallModal() {
         </div>
       )}
 
-      {/* ── Mini floating button (after modal dismissed) ── */}
-      {showButton && !showModal && (
+      {/* ── Floating install button (always visible unless dismissed) ── */}
+      {!hideButton && !showModal && (
         <button
           onClick={() => setShowModal(true)}
           className="fixed bottom-5 right-5 z-50 group flex items-center gap-2.5 bg-gradient-to-r from-rosewood to-rosewood-light text-white pl-4 pr-5 py-3.5 rounded-2xl shadow-2xl shadow-rosewood/30 hover:shadow-rosewood/40 hover:-translate-y-1 transition-all animate-fade-in-up"
@@ -355,7 +352,7 @@ export function InstallModal() {
             </span>
           </div>
           <button
-            onClick={(e) => { e.stopPropagation(); dismissAll(); }}
+            onClick={(e) => { e.stopPropagation(); dismissButton(); }}
             className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center text-rosewood/60 hover:text-rosewood text-xs"
             aria-label="Fermer"
           >
