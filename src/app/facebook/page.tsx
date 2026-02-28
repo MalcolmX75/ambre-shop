@@ -111,11 +111,11 @@ export default function FacebookPage() {
           </div>
 
           {/* Profile section */}
-          <div className="relative px-4 pb-4">
-            <div className="flex flex-col sm:flex-row sm:items-end gap-4">
+          <div className="relative px-3 sm:px-4 pb-3 sm:pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4">
               {/* Profile picture */}
-              <div className="relative -mt-[68px] sm:-mt-[84px] z-10">
-                <div className="w-[136px] h-[136px] sm:w-[168px] sm:h-[168px] rounded-full border-4 border-white bg-white shadow-lg overflow-hidden">
+              <div className="relative -mt-[50px] sm:-mt-[68px] md:-mt-[84px] z-10">
+                <div className="w-[100px] h-[100px] sm:w-[136px] sm:h-[136px] md:w-[168px] md:h-[168px] rounded-full border-[3px] sm:border-4 border-white bg-white shadow-lg overflow-hidden">
                   <Image
                     src="/images/logo_ambre_shop.png"
                     alt={brand.brandName}
@@ -125,24 +125,24 @@ export default function FacebookPage() {
                   />
                 </div>
                 {/* Online indicator */}
-                <div className="absolute bottom-3 right-3 w-6 h-6 bg-green-500 border-[3px] border-white rounded-full" />
+                <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 w-4 h-4 sm:w-6 sm:h-6 bg-green-500 border-2 sm:border-[3px] border-white rounded-full" />
               </div>
 
               {/* Page name & stats */}
-              <div className="flex-1 pb-2">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              <div className="flex-1 pb-1 sm:pb-2">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
                   {brand.brandName}
                 </h1>
-                <p className="text-gray-500 text-sm mt-0.5">
+                <p className="text-gray-500 text-xs sm:text-sm mt-0.5">
                   2,4K abonnés &middot; 1,8K mentions J&apos;aime
                 </p>
                 {/* Follower avatars */}
-                <div className="flex items-center mt-2">
-                  <div className="flex -space-x-2">
+                <div className="flex items-center mt-1.5 sm:mt-2">
+                  <div className="flex -space-x-1.5 sm:-space-x-2">
                     {["N", "S", "A", "M", "L", "K"].map((letter, i) => (
                       <div
                         key={i}
-                        className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold text-white"
+                        className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white flex items-center justify-center text-[10px] sm:text-xs font-bold text-white"
                         style={{
                           background: [
                             "#E1C48E", "#D4A0B0", "#8B5E6B",
@@ -154,16 +154,16 @@ export default function FacebookPage() {
                       </div>
                     ))}
                   </div>
-                  <span className="ml-2 text-xs text-gray-500">
-                    Nadia, Sophie et 2 398 autres personnes aiment ça
+                  <span className="ml-1.5 sm:ml-2 text-[10px] sm:text-xs text-gray-500 line-clamp-1">
+                    Nadia, Sophie et 2 398 autres aiment ça
                   </span>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-2 pb-2">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors flex items-center gap-2 shadow-sm">
-                  <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 pb-1 sm:pb-2">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 sm:gap-2 shadow-sm">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
                   </svg>
                   J&apos;aime
@@ -172,18 +172,18 @@ export default function FacebookPage() {
                   href={brand.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 shadow-sm hover:shadow-md"
+                  className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 sm:gap-2 shadow-sm hover:shadow-md"
                 >
-                  <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
                   </svg>
                   Message
                 </a>
-                <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors flex items-center gap-2">
-                  <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 sm:gap-2">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
                   </svg>
-                  Partager
+                  <span className="hidden sm:inline">Partager</span>
                 </button>
               </div>
             </div>

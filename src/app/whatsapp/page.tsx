@@ -124,7 +124,7 @@ export default function WhatsAppPage() {
                   className={`flex ${msg.from === "client" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-xs sm:max-w-sm rounded-lg px-3 py-2 shadow-sm text-sm ${
+                    className={`max-w-[75%] sm:max-w-sm rounded-lg px-3 py-2 shadow-sm text-xs sm:text-sm ${
                       msg.from === "client"
                         ? "bg-green-100 text-gray-800"
                         : "bg-white text-gray-800"
@@ -147,15 +147,15 @@ export default function WhatsAppPage() {
             </div>
 
             {/* Input bar */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-t border-gray-200">
-              <div className="flex-1 bg-white rounded-full px-4 py-2 text-sm text-gray-400 border border-gray-200">
+            <div className="flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border-t border-gray-200">
+              <div className="flex-1 bg-white rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-400 border border-gray-200 truncate">
                 Tapez un message...
               </div>
               <a
                 href={brand.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors shadow-md"
+                className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors shadow-md shrink-0"
               >
                 Ouvrir WhatsApp
               </a>

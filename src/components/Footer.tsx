@@ -9,8 +9,8 @@ export default function Footer() {
       <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
 
       <div className="glass-dark text-off-white/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -85,7 +85,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-12 pt-6 border-t border-off-white/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-off-white/40">
+          <div className="mt-6 sm:mt-12 pt-4 sm:pt-6 border-t border-off-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-off-white/40">
             <span>
               &copy; {new Date().getFullYear()} {brand.brandName}. Tous droits réservés.
             </span>

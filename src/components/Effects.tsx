@@ -338,22 +338,22 @@ export function InstallModal() {
       {!hideButton && !showModal && (
         <button
           onClick={() => setShowModal(true)}
-          className="fixed bottom-5 right-5 z-50 group flex items-center gap-2.5 bg-gradient-to-r from-rosewood to-rosewood-light text-white pl-4 pr-5 py-3.5 rounded-2xl shadow-2xl shadow-rosewood/30 hover:shadow-rosewood/40 hover:-translate-y-1 transition-all animate-fade-in-up"
+          className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 group flex items-center gap-2 sm:gap-2.5 bg-gradient-to-r from-rosewood to-rosewood-light text-white pl-3 sm:pl-4 pr-4 sm:pr-5 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-2xl shadow-rosewood/30 hover:shadow-rosewood/40 hover:-translate-y-1 transition-all animate-fade-in-up"
         >
-          <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
-            <svg className="w-5 h-5 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-white/20 flex items-center justify-center">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
           <div className="text-left">
-            <span className="text-sm font-semibold block leading-tight">Installer l&apos;app</span>
-            <span className="text-[10px] text-white/60 font-normal">
+            <span className="text-xs sm:text-sm font-semibold block leading-tight">Installer l&apos;app</span>
+            <span className="text-[9px] sm:text-[10px] text-white/60 font-normal">
               {isMobile ? "Ajouter à l'écran" : "Accès rapide"}
             </span>
           </div>
           <button
             onClick={(e) => { e.stopPropagation(); dismissButton(); }}
-            className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center text-rosewood/60 hover:text-rosewood text-xs"
+            className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full shadow-md flex items-center justify-center text-rosewood/60 hover:text-rosewood text-[10px] sm:text-xs"
             aria-label="Fermer"
           >
             ✕
