@@ -1,0 +1,26 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#FDF2F0"/>
+  <!-- Lipstick tube -->
+  <rect x="175" y="200" width="50" height="140" rx="6" fill="url(#rougeBase)"/>
+  <rect x="175" y="200" width="50" height="40" rx="4" fill="#E1C48E"/>
+  <!-- Lipstick tip -->
+  <path d="M178 200 L178 130 Q200 100 222 130 L222 200 Z" fill="url(#rougeColor)"/>
+  <path d="M178 200 L222 200" stroke="#C9937A" stroke-width="1"/>
+  <!-- Gold ring -->
+  <rect x="173" y="195" width="54" height="10" rx="2" fill="#E1C48E"/>
+  <!-- Sparkle -->
+  <path d="M280 160 L285 150 L290 160 L285 170Z" fill="#E1C48E" opacity="0.4"/>
+  <path d="M120 200 L125 190 L130 200 L125 210Z" fill="#E1C48E" opacity="0.3"/>
+  <!-- Label -->
+  <text x="200" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="8" fill="white" font-weight="bold">VELVET</text>
+  <defs>
+    <linearGradient id="rougeColor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C44569"/>
+      <stop offset="100%" stop-color="#A3325A"/>
+    </linearGradient>
+    <linearGradient id="rougeBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A2A2A"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
+    </linearGradient>
+  </defs>
+</svg>

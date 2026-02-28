@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="20" fill="#FDF2F0"/>
+  <!-- Body silhouette -->
+  <path d="M85 50 Q100 40 115 50 Q120 70 115 100 Q130 120 120 150 Q100 160 80 150 Q70 120 85 100 Q80 70 85 50Z" fill="#F5DDD6" stroke="#D4A0B0" stroke-width="1"/>
+  <!-- Drops -->
+  <circle cx="95" cy="80" r="4" fill="#E1C48E" opacity="0.5"/>
+  <circle cx="108" cy="95" r="3" fill="#E1C48E" opacity="0.4"/>
+  <circle cx="100" cy="110" r="5" fill="#E1C48E" opacity="0.3"/>
+  <text x="100" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8B5E6B" font-weight="bold">Soins corps</text>
+</svg>

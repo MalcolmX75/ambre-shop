@@ -1,0 +1,33 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#FDF2F0"/>
+  <!-- Perfume bottle -->
+  <rect x="155" y="140" width="90" height="170" rx="10" fill="url(#parfumGrad)"/>
+  <!-- Glass effect -->
+  <rect x="165" y="155" width="20" height="140" rx="4" fill="white" opacity="0.15"/>
+  <!-- Neck -->
+  <rect x="180" y="105" width="40" height="40" rx="4" fill="#D4A96A"/>
+  <!-- Cap -->
+  <rect x="170" y="60" width="60" height="50" rx="6" fill="url(#capGrad)"/>
+  <rect x="175" y="65" width="50" height="8" rx="2" fill="#F0D4A8" opacity="0.4"/>
+  <!-- Spray button -->
+  <rect x="192" y="50" width="16" height="15" rx="8" fill="#C9937A"/>
+  <!-- Label -->
+  <rect x="165" y="200" width="70" height="50" rx="6" fill="white" opacity="0.3"/>
+  <text x="200" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#8B5E6B" font-weight="bold">NUIT</text>
+  <text x="200" y="236" text-anchor="middle" font-family="Georgia, serif" font-size="8" fill="#8B5E6B">d&apos;Ambre</text>
+  <!-- Mist -->
+  <circle cx="230" cy="90" r="4" fill="#E1C48E" opacity="0.2"/>
+  <circle cx="245" cy="75" r="6" fill="#E1C48E" opacity="0.15"/>
+  <circle cx="255" cy="95" r="3" fill="#E1C48E" opacity="0.2"/>
+  <circle cx="240" cy="60" r="5" fill="#E1C48E" opacity="0.1"/>
+  <defs>
+    <linearGradient id="parfumGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4A0B0"/>
+      <stop offset="100%" stop-color="#8B5E6B"/>
+    </linearGradient>
+    <linearGradient id="capGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E1C48E"/>
+      <stop offset="100%" stop-color="#C9937A"/>
+    </linearGradient>
+  </defs>
+</svg>

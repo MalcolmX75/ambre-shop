@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="20" fill="#FDF2F0"/>
+  <!-- Lipstick -->
+  <rect x="80" y="70" width="24" height="70" rx="3" fill="#2A2A2A"/>
+  <path d="M82 70 L82 50 Q92 35 102 50 L102 70Z" fill="#C44569"/>
+  <rect x="78" y="67" width="28" height="6" rx="2" fill="#E1C48E"/>
+  <!-- Brush -->
+  <rect x="115" y="55" width="8" height="90" rx="2" fill="#D4A96A"/>
+  <path d="M115 55 L119 30 L123 55Z" fill="#8B5E6B"/>
+  <!-- Compact -->
+  <ellipse cx="100" cy="155" rx="35" ry="8" fill="#D4A0B0" opacity="0.4"/>
+  <text x="100" y="185" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8B5E6B" font-weight="bold">Maquillage</text>
+</svg>
