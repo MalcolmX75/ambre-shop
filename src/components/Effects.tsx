@@ -156,37 +156,67 @@ export function FadeInSection({
 /* ─── PWA Install Button ─── */
 export function InstallButton() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [show, setShow] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isStandalone, setIsStandalone] = useState(false);
 
   useEffect(() => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    setIsStandalone(
+      window.matchMedia("(display-mode: standalone)").matches ||
+      ("standalone" in navigator && (navigator as unknown as { standalone: boolean }).standalone)
+    );
+
     const handler = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
-      setShow(true);
     };
     window.addEventListener("beforeinstallprompt", handler);
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
 
   const handleInstall = async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    setDeferredPrompt(null);
-    setShow(false);
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      setDeferredPrompt(null);
+      setDismissed(true);
+      return;
+    }
+    // iOS/Safari: show instructions
+    alert(
+      "Pour installer l'app :\n\n" +
+      "1. Appuie sur le bouton Partager (📤)\n" +
+      "2. Choisis « Sur l'écran d'accueil »\n" +
+      "3. Confirme avec « Ajouter »"
+    );
   };
 
-  if (!show) return null;
+  if (isStandalone || dismissed) return null;
 
   return (
     <button
       onClick={handleInstall}
-      className="fixed bottom-6 right-6 z-50 group flex items-center gap-2 bg-gradient-to-r from-rosewood to-rosewood-light text-white pl-4 pr-5 py-3 rounded-full shadow-xl shadow-rosewood/20 hover:shadow-2xl hover:-translate-y-1 transition-all"
+      className="fixed bottom-5 right-5 z-50 group flex items-center gap-2.5 bg-gradient-to-r from-rosewood to-rosewood-light text-white pl-4 pr-5 py-3.5 rounded-2xl shadow-2xl shadow-rosewood/30 hover:shadow-rosewood/40 hover:-translate-y-1 transition-all animate-fade-in-up"
     >
-      <svg className="w-5 h-5 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      <span className="text-sm font-medium">Installer l&apos;app</span>
+      <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
+        <svg className="w-5 h-5 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <div className="text-left">
+        <span className="text-sm font-semibold block leading-tight">Installer l&apos;app</span>
+        <span className="text-[10px] text-white/60 font-normal">
+          {isMobile ? "Ajouter à l'écran" : "Accès rapide"}
+        </span>
+      </div>
+      <button
+        onClick={(e) => { e.stopPropagation(); setDismissed(true); }}
+        className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center text-rosewood/60 hover:text-rosewood text-xs"
+        aria-label="Fermer"
+      >
+        ✕
+      </button>
     </button>
   );
 }

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       {/* ═══════ HERO ═══════ */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-clip">
+      <section className="relative min-h-[80vh] sm:min-h-[92vh] flex items-center justify-center overflow-clip px-4">
         {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-b from-rosewood-pale via-blush/60 to-off-white" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(225,196,142,0.2)_0%,_transparent_50%)]" />
@@ -47,9 +47,9 @@ export default function Home() {
               <Image
                 src="/images/logo_ambre_shop.png"
                 alt={brand.brandName}
-                width={140}
-                height={140}
-                className="rounded-full shadow-2xl shadow-rosewood/10 ring-4 ring-white/50"
+                width={180}
+                height={180}
+                className="w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] rounded-full shadow-2xl shadow-rosewood/10 ring-4 ring-white/50"
                 priority
               />
               <div className="absolute -inset-3 rounded-full border border-gold/20 animate-pulse-gold" />
